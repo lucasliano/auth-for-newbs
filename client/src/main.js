@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import 'bootswatch/dist/superhero/bootstrap.css';
+import 'bootswatch/dist/sketchy/bootstrap.css';
 
 import App from './App.vue';
 import router from './router';
