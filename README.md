@@ -146,15 +146,15 @@ Project Link: [https://github.com/lucasliano/auth-for-newbs](https://github.com/
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/lucasliano/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/lucasliano/auth-for-newbs/graphs/contributors
+[contributors-url]: https://github.com/CodingGarden/auth-for-newbs/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/lucasliano/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/lucasliano/auth-for-newbs/network/members
+[forks-url]: https://github.com/CodingGarden/auth-for-newbs/network/members
 [stars-shield]: https://img.shields.io/github/stars/lucasliano/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/lucasliano/auth-for-newbs/stargazers
+[stars-url]: https://github.com/CodingGarden/auth-for-newbs/stargazers
 [issues-shield]: https://img.shields.io/github/issues/lucasliano/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/lucasliano/auth-for-newbs/issues
+[issues-url]: https://github.com/CodingGarden/auth-for-newbs/issues
 [license-shield]: https://img.shields.io/github/license/lucasliano/repo.svg?style=for-the-badge
-[license-url]: https://github.com/lucasliano/auth-for-newbs/blob/master/LICENSE.txt
+[license-url]: https://github.com/CodingGarden/auth-for-newbs/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/lucas-liaño-086b1514a
 [product-screenshot]: images/screenshot.png
