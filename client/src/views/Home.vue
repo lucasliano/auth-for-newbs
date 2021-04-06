@@ -7,7 +7,7 @@
       </p>
       <hr class="my-4">
       <p>
-        CJ and Tony are a great team (most days...)
+        Click here to test!
       </p>
       <p class="lead">
         <router-link

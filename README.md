@@ -1,113 +1,160 @@
-# Auth for Newbs
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-Add JWT-based authentication to a Node/Express/Mongo app.
 
-## Authentication
-* [x] Create Server
-* [x] Add auth router
-* [x] Create user with POST /auth/signup
-	* [x] validate required fields
-	* [x] Check if username is unique
-	* [x] hash password with bcrypt
-	* [x] insert into db
-* [x] Create Landing Page
-	* [x] Link to Sign Up Page
-* [ ] Create Sign Up Page
-	* [x] Form with: username and password
-	* [x] When form is submitted
-		* [x] Validate username
-			* [x] Display errors
-		* [x] Validate password
-			* [x] Display errors
-		* [x] POST request to server
-			* [x] Display errors
-			* [x] If succesful sign up
-				* [x] Redirect to login page
-* [ ] Login user with POST /auth/login
-	* [x] validate the user
-	* [x] check if username in db
-		* [x] compare password with hashed password in db
-		* [x] Create and sign a JWT
-      * [x] Respond with JWT
-* [x] Create Login Page
-	* [x] Form with: username and password
-	* [x] When form is submitted
-		* [x] Validate username
-			* [x] Display errors
-		* [x] Validate password
-			* [x] Display errors
-		* [x] POST request to server /auth/login
-			* [x] Display errors
-			* [x] If succesful login
-				* [x] Store the token in localStorage
-				* [x] Redirect to the "dashboard"
-* [x] If a logged in user visits the signup or login page, redirect them to the dashboard
-* [x] If a non logged in user visits the dashboard, redirect to the login page
-* [x] After sign up, immediately login
-* [x] Show username on dashboard
-* [ ] On homepage, show go to dashboard button instead of signup/login button
-* [ ] If logged in:
-	* [ ] Show logout button in header
-	* [ ] Show user icon and username in header
 
-### Authorization:
-* [x] Visitors can only see the homepage
-	* [x] checkTokenSetUser middleware
-		* [x] get token from Authorization header
-			* [x] if defined ---
-				* [x] Verify the token with the token secret
-				* [x] Set req.user to be the decoded verified payload
-			* [x] else - move along
-	* [x] isLoggedIn middleware
-		* [x] if req.user is set - move along
-		* [x] else - send an unauthorized error message
-	* [x] redirect to login form
-* [x] Logged in users can only see their page
-* [x] Create notes form on client
-	* [x] Title
-	* [x] Description
-* [x] POST /api/v1/notes
-	* [x] Must be logged in
-	* [x] Logged in Users Can Create Notes
-		* [x] Title
-		* [x] Description -- markdown
-		* [x] Set user_id on server with logged in users id
-* [x] GET /api/v1/notes
-	* [x] Must be logged in
-	* [x] Logged in Users Can request all their notes 
-		* [x] Get all notes in DB with logged in users user_id
-* [x] List all notes on client
-	* [x] Render description with Markdown
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/lucasliano/auth-for-newbs">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-## STRETCH
+  <h3 align="center">FullStack Authenticator Template</h3>
 
-* [ ] Store date of note in DB
-	* [ ] Sort notes by date created.
-* [ ] View user profile
-* [ ] Users can mark notes as public
-	* [ ] Notes show up on profile
+  <p align="center">
+    Little full stack web app used to show how to correctly manage an auth service
+    <br />
+    <a href="https://github.com/lucasliano/auth-for-newbs"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/lucasliano/auth-for-newbs">View Demo</a>
+    ·
+    <a href="https://github.com/lucasliano/auth-for-newbs/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/lucasliano/auth-for-newbs/issues">Request Feature</a>
+  </p>
+</p>
 
-## Admin Page:
-* [ ] Admin page that lists all users
-	* [ ] admin table with user_id
-	* [ ] de-activate users
-* [ ] Admin can see any page on site
-* [ ] Rate limiting
-  * [ ] Prevent brute force logins
-	* [ ] Lock out account after too many login attempts
-* [ ] Password strength meter!
-* [ ] reCaptcha for signup/login
-* [ ] Password reset with email
-* [ ] Forgot password
-	* [ ] Reset with email
-	* [ ] Reset by answering security questions
-* [ ] Testing...
 
-## To deploy everything to the same heroku instance
 
-* [ ] Move the server package.json to the root of the folder
-* [ ] Update start script for server to be a relative path
-* [ ] post-deploy script to server that will build Vue.js
-* [ ] Add a static serve to the server that serves '../client/dist'
-* [ ] Environment variable for DB connection and token secret
-* [ ] Update calls in client from localhost:5000 to be your-app.herokuapp.com
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+[![Product Name Screen Shot][product-screenshot]](https://github.com/lucasliano/auth-for-newbs)
+
+
+
+### Built With
+
+* [Node Js](https://nodejs.org/es/)
+* [Vue.js](https://vuejs.org/)
+* [MongoDB](https://www.mongodb.com/es)
+* [Bootswatch](https://bootswatch.com/)
+* [bcryptjs](https://www.npmjs.com/package/bcryptjs)
+* [joi](https://www.npmjs.com/package/joi)
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/lucasliano/auth-for-newbs.git
+   ```
+2. Install NPM packages in the server and client dir
+   ```sh
+   npm install
+   ```
+3. You have to set up some .env files.
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+See the [open issues](https://github.com/lucasliano/auth-for-newbs/issues) for a list of proposed features (and known issues).
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Lucas Liaño - lliano@frba.utn.edu.ar
+
+Project Link: [https://github.com/lucasliano/auth-for-newbs](https://github.com/lucasliano/auth-for-newbs)
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+## Acknowledgements
+
+* [CodingGarden repo](https://github.com/CodingGarden/auth-for-newbs)
+* [README Template](https://github.com/othneildrew/Best-README-Template)
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/lucasliano/repo.svg?style=for-the-badge
+[contributors-url]: https://github.com/lucasliano/repo/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/lucasliano/repo.svg?style=for-the-badge
+[forks-url]: https://github.com/lucasliano/repo/network/members
+[stars-shield]: https://img.shields.io/github/stars/lucasliano/repo.svg?style=for-the-badge
+[stars-url]: https://github.com/lucasliano/repo/stargazers
+[issues-shield]: https://img.shields.io/github/issues/lucasliano/repo.svg?style=for-the-badge
+[issues-url]: https://github.com/lucasliano/repo/issues
+[license-shield]: https://img.shields.io/github/license/lucasliano/repo.svg?style=for-the-badge
+[license-url]: https://github.com/lucasliano/repo/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/lucas-liaño-086b1514a
+[product-screenshot]: images/screenshot.png
