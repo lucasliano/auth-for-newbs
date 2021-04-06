@@ -1,0 +1,4 @@
+Lista de cosas que le faltan al template:
+
+  - Verificación con email para usuarios que se estan registrando
+  - Anti force brute attacks
